@@ -1,0 +1,7 @@
+payload:
+  # 内容：Epic
+  # 数量：4条
+  - '+.epicgames.com'
+  - '+.helpshift.com'
+  - '+.paragon.com'
+  - '+.unrealengine.com'
