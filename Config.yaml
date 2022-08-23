@@ -432,23 +432,23 @@ rules:
   - DOMAIN,yacd.haishan.me,DIRECT
   - RULE-SET,private,DIRECT
   - RULE-SET,reject,REJECT
-  - RULE-SET,icloud,🍎 苹果
-  - RULE-SET,apple,🍎 苹果
   - RULE-SET,FCMdomain,DIRECT
   - RULE-SET,bilibili,📺 哔哩哔哩
   - RULE-SET,bilibiliHMTdomain,📺 哔哩哔哩
   - RULE-SET,eh,🔞 Ehentai
   - RULE-SET,epic,🎮 CNCDN
   - RULE-SET,steamdomain,🎮 CNCDN
+  - RULE-SET,icloud,🍎 苹果
+  - RULE-SET,apple,🍎 苹果
   - RULE-SET,microsoft,Ⓜ️ 微软
   - RULE-SET,onedrive,Ⓜ️ 微软
   - RULE-SET,google,🚀 节点选择
   - RULE-SET,proxy,🚀 节点选择
   - RULE-SET,direct,DIRECT
   - RULE-SET,lancidr,DIRECT,no-resolve
-  - RULE-SET,steamip,🎮 CNCDN,no-resolve
-  - RULE-SET,bilibiliHMTip,📺 哔哩哔哩,no-resolve
   - RULE-SET,FCMip,DIRECT,no-resolve
+  - RULE-SET,bilibiliHMTip,📺 哔哩哔哩,no-resolve
+  - RULE-SET,steamip,🎮 CNCDN,no-resolve
   - RULE-SET,telegramcidr,🚀 节点选择,no-resolve  
   - RULE-SET,cncidr,DIRECT,no-resolve
   - GEOIP,LAN,DIRECT,no-resolve
