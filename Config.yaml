@@ -149,38 +149,6 @@ external-controller: 127.0.0.1:9090
   #   '+.internal.crop.com': '10.0.0.1'
 
 proxies:
-  # vmess
-  # cipher support auto/aes-128-gcm/chacha20-poly1305/none
-  # - name: "vmess"
-  #   type: vmess
-  #   server: server
-  #   port: 443
-  #   uuid: uuid
-  #   alterId: 32
-  #   cipher: auto
-    # udp: true
-    # tls: true
-    # skip-cert-verify: true
-    # servername: example.com # priority over wss host
-    # network: ws
-    # ws-opts:
-    #   path: /path
-    #   headers:
-    #     Host: v2ray.com
-    #   max-early-data: 2048
-    #   early-data-header-name: Sec-WebSocket-Protocol
-
-  - name: trojan-grpc
-    server: server
-    port: 443
-    type: trojan
-    password: "example"
-    network: grpc
-    sni: example.com
-    # skip-cert-verify: true
-    udp: true
-    grpc-opts:
-      grpc-service-name: "example"
 
 proxy-groups:
   - name: "🚀 节点选择"
@@ -194,14 +162,14 @@ proxy-groups:
   - name: "🚀 手动切换"
     type: select
     proxies:
-      - 🇯🇵 CF grpc
       - 🇯🇵 CF ws
-      - 🇯🇵 直连 grpc
+      - 🇯🇵 CF grpc
       - 🇯🇵 直连 ws
-      - 🇭🇰 CF grpc
+      - 🇯🇵 直连 grpc
       - 🇭🇰 CF ws
-      - 🇭🇰 直连 grpc
+      - 🇭🇰 CF grpc
       - 🇭🇰 直连 ws
+      - 🇭🇰 直连 grpc
 
   - name: "📺 哔哩哔哩"
     type: select
@@ -245,6 +213,15 @@ proxy-groups:
       - 🚀 手动切换
       - DIRECT
 
+  - name: "📢 FCM"
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🇭🇰 香港
+      - 🇯🇵 日本
+      - 🚀 手动切换
+      - DIRECT
+
   - name: "🐟 漏网之鱼"
     type: select
     proxies:
@@ -254,7 +231,7 @@ proxy-groups:
       - 🚀 手动切换
       - DIRECT
 
-  - name: 🇭🇰 香港节点
+  - name: "🇭🇰 香港"
     type: select
     proxies:
       - 🇭🇰 CF grpc
@@ -262,7 +239,7 @@ proxy-groups:
       - 🇭🇰 直连 grpc
       - 🇭🇰 直连 ws
 
-  - name: 🇯🇵 日本节点
+  - name: "🇯🇵 日本"
     type: select
     proxies:
       - 🇯🇵 CF grpc
@@ -432,7 +409,7 @@ rules:
   - DOMAIN,yacd.haishan.me,DIRECT
   - RULE-SET,private,DIRECT
   - RULE-SET,reject,REJECT
-  - RULE-SET,FCMdomain,DIRECT
+  - RULE-SET,FCMdomain,📢 FCM
   - RULE-SET,bilibili,📺 哔哩哔哩
   - RULE-SET,bilibiliHMTdomain,📺 哔哩哔哩
   - RULE-SET,eh,🔞 Ehentai
@@ -446,7 +423,7 @@ rules:
   - RULE-SET,proxy,🚀 节点选择
   - RULE-SET,direct,DIRECT
   - RULE-SET,lancidr,DIRECT,no-resolve
-  - RULE-SET,FCMip,DIRECT,no-resolve
+  - RULE-SET,FCMip,📢 FCM,no-resolve
   - RULE-SET,bilibiliHMTip,📺 哔哩哔哩,no-resolve
   - RULE-SET,steamip,🎮 CNCDN,no-resolve
   - RULE-SET,telegramcidr,🚀 节点选择,no-resolve  
