@@ -13,6 +13,6 @@ payload:
   - '+.wmsjsteam.com'
   - '+.cm.steampowered.com'
   - '+.steamchina.com'
-  - '+.steamcontent.com'
-  - '+.steamusercontent.com'
+#  - '+.steamcontent.com'
+#  - '+.steamusercontent.com'
   - '+.steamserver.net'
